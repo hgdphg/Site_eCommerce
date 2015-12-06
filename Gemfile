@@ -19,6 +19,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
+gem 'rmagick'
 gem 'carrierwave'
 
 # Use jquery as the JavaScript library

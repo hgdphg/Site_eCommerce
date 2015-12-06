@@ -11,7 +11,7 @@
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
   <dd><%= @user.address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:avatar_image) %>:</strong></dt>
-  <dd><%= image_tag @user.avatar_image.url %></dd>
+  <dd><%= image_tag(@user.avatar_image_url(:size_100_100)) if @user.avatar_image_url %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

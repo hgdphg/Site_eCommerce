@@ -5,11 +5,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:avatar_image) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:age) %></th>
-      <th><%= model_class.human_attribute_name(:address) %></th>
-      <th><%= model_class.human_attribute_name(:avatar_image) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>      
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -17,11 +16,10 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to user.id, user_path(user) %></td>
-        <td><%= user.name %></td>
+        <td><%= image_tag(user.avatar_image_url(:size_100_100)) if user.avatar_image_url %></td>        
+        <td><%= link_to user.name, user_path(user)  %></td>
         <td><%= user.age %></td>
         <td><%= user.address %></td>
-        <td><%= image_tag user.avatar_image.url %></td>
         <td><%=l user.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
